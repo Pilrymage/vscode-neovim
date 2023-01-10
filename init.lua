@@ -33,7 +33,6 @@ map("n","N","0",opts)
 map("n","I","$",opts)
 map("n","U","5k",opts)
 map("n","E","5j",opts)
-
 -- 方向键
 -- 快捷键映射
 -- 即使用caps lock顶替esc,对左手小拇指而言还是很恼火。

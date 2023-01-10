@@ -1,5 +1,5 @@
 #!/bin/bash
-if [ ! -d "~/.config/nvim/"r ]; then
+if [  -d "~/.config/nvim/" ]; then
   mkdir ~/.config/nvim/
 fi
 cp init.lua ~/.config/nvim/init.lua

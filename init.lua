@@ -16,7 +16,7 @@ local nvlist=function(mylist)
     nvmap(pair[1],pair[2])
   end
 end
-local ilist=function(from,to)
+local ilist=function(mylist)
   for i,pair in pairs(mylist) do
     imap(pair[1],pair[2])
   end
@@ -42,7 +42,8 @@ nvlist({
   {'I','$'},
   {'U','5k'},
   {'E','5j'},
-  {'L','I'}
+  {'L','I'},
+  {'H','E'}
 })
 -- 带shift的按键也有相应修改。
 -- 方向键做了一点强化，不需要逆天的$和0了。

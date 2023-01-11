@@ -2,6 +2,7 @@
 -- 按个人习惯逐渐改进的配置方案，可视情况注释不需要的部分
 
 local map = vim.api.nvim_set_keymap
+-- local map = function (x,y,z) print(y,z) end
 local opts = {noremap = true, silent = true}
 local nvmap= function(from,to)
   map("n",from,to,opts)
@@ -11,13 +12,13 @@ local imap = function(from,to)
   map("i",from,to,opts)
 end
 local nvlist=function(mylist)
-  for pair in mylist do
-    nvmap(pair[0],pair[1])
+  for i,pair in pairs(mylist) do
+    nvmap(pair[1],pair[2])
   end
 end
 local ilist=function(from,to)
-  for pair in mylist do
-    imap(pair[0],pair[1])
+  for i,pair in pairs(mylist) do
+    imap(pair[1],pair[2])
   end
 end
 -- 最基础的修改：光标的方向键
@@ -38,21 +39,6 @@ nvlist({
   {'k','n'},
   {'l','i'},
 })
-map("n","n","h",opts)
-map("n","e","j",opts)
-map("n","i","l",opts)
-map("n","h","e",opts)
-map("n","j","u",opts)
-map("n","k","n",opts)
-map("n","l","i",opts)
-map("v","u","k",opts)
-map("v","n","h",opts)
-map("v","e","j",opts)
-map("v","h","l",opts)
-map("v","i","e",opts)
-map("v","j","u",opts)
-map("v","k","n",opts)
-map("v","l","i",opts)
 -- 带shift的按键也有相应修改。
 -- 方向键做了一点强化，不需要逆天的$和0了。
 map("n","N","0",opts)

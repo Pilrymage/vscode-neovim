@@ -3,6 +3,23 @@
 
 local map = vim.api.nvim_set_keymap
 local opts = {noremap = true, silent = true}
+local nvmap= function(from,to)
+  map("n",from,to,opts)
+  map("v",from,to,opts)
+end
+local imap = function(from,to)
+  map("i",from,to,opts)
+end
+local nvlist=function(mylist)
+  for pair in mylist do
+    nvmap(pair[0],pair[1])
+  end
+end
+local ilist=function(from,to)
+  for pair in mylist do
+    imap(pair[0],pair[1])
+  end
+end
 -- 最基础的修改：光标的方向键
 -- hjkl四个键得改掉后三个，索性全部换掉，因为hjkl的排布还是有点逆天
 --             u
@@ -11,7 +28,16 @@ local opts = {noremap = true, silent = true}
 -- j：撤回，等同于u
 -- k：下一个搜索结果，等同于n
 -- l：插入，等同于i
-map("n","u","k",opts)
+nvlist({
+  {'u','k'},
+  {'n','h'},
+  {'e','j'},
+  {'i','l'},
+  {'h','e'},
+  {'j','u'},
+  {'k','n'},
+  {'l','i'},
+})
 map("n","n","h",opts)
 map("n","e","j",opts)
 map("n","i","l",opts)

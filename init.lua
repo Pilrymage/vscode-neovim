@@ -2,6 +2,7 @@
 -- 按个人习惯逐渐改进的配置方案，可视情况注释不需要的部分
 
 local map = vim.api.nvim_set_keymap
+vim.g.mapleader=' '
 -- local map = function (x,y,z) print(y,z) end
 local opts = {noremap = true, silent = true}
 local nvmap= function(from,to)
@@ -39,11 +40,19 @@ nvlist({
   {'k','n'},
   {'l','i'},
   {'N','0'},
+  {'dN','d0'},
+  {'cN','c0'},
   {'I','$'},
+  {'dI','d$'},
+  {'cI','c$'},
   {'U','5k'},
   {'E','5j'},
   {'L','I'},
-  {'H','E'}
+  {'H','E'},
+  {'gh','ge'},
+  {'<C-U>','<C-Y>'},
+  {'<leader>o','o<Esc>'},
+  {'<leader>O','O<Esc>'}
 })
 -- 带shift的按键也有相应修改。
 -- 方向键做了一点强化，不需要逆天的$和0了。

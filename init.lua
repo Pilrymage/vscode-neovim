@@ -73,6 +73,4 @@ vim.call('plug#begin', '~/.config/nvim/plugged')
 
 Plug 'tpope/vim-surround' -- 插件：用于包括号或者html标签
 
-Plug 'tpope/vim-repeat' -- 上面插件附送的，用于重复命令
-
 vim.call('plug#end')

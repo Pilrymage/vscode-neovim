@@ -3,6 +3,7 @@
 
 local map = vim.api.nvim_set_keymap
 vim.g.mapleader=' '
+vim.opt.clipboard='unnamedplus'  --  需要xclip
 -- local map = function (x,y,z) print(y,z) end
 local opts = {noremap = true, silent = true}
 local nvmap= function(from,to)
@@ -52,10 +53,10 @@ nvlist({
   {'L','I'},
   {'H','E'},
   {'gh','ge'},
-  {'<C-U>','<C-Y>'},
+  -- {'<C-U>','<C-Y>'},
   {'<leader>o','o<Esc>'},
   {'<leader>O','O<Esc>'},
-})
+  })
 -- 带shift的按键也有相应修改。
 -- 方向键做了一点强化，不需要逆天的$和0了。
 -- 方向键
@@ -70,8 +71,8 @@ local Plug = vim.fn['plug#']
 
 vim.call('plug#begin', '~/.config/nvim/plugged')
 
-Plug 'tpope/vim-surround'
+Plug 'tpope/vim-surround' -- 插件：用于包括号或者html标签
 
-Plug 'tpope/vim-repeat'
+Plug 'tpope/vim-repeat' -- 上面插件附送的，用于重复命令
 
 vim.call('plug#end')

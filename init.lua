@@ -22,6 +22,8 @@ local ilist=function(mylist)
     imap(pair[1],pair[2])
   end
 end
+
+  
 -- 最基础的修改：光标的方向键
 -- hjkl四个键得改掉后三个，索性全部换掉，因为hjkl的排布还是有点逆天
 --             u
@@ -52,7 +54,7 @@ nvlist({
   {'gh','ge'},
   {'<C-U>','<C-Y>'},
   {'<leader>o','o<Esc>'},
-  {'<leader>O','O<Esc>'}
+  {'<leader>O','O<Esc>'},
 })
 -- 带shift的按键也有相应修改。
 -- 方向键做了一点强化，不需要逆天的$和0了。
@@ -63,3 +65,13 @@ nvlist({
 ilist({
   {'nk','<Esc>'}
 })
+
+local Plug = vim.fn['plug#']
+
+vim.call('plug#begin', '~/.config/nvim/plugged')
+
+Plug 'tpope/vim-surround'
+
+Plug 'tpope/vim-repeat'
+
+vim.call('plug#end')

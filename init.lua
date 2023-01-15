@@ -4,6 +4,7 @@
 local map = vim.api.nvim_set_keymap
 vim.g.mapleader=' '
 vim.opt.clipboard='unnamedplus'  --  需要xclip
+vim.cmd('set ic')
 -- local map = function (x,y,z) print(y,z) end
 local opts = {noremap = true, silent = true}
 local nvmap= function(from,to)
@@ -52,6 +53,7 @@ nvlist({
   {'E','5j'},
   {'L','I'},
   {'H','E'},
+  {'K','N'},
   {'gh','ge'},
   -- {'<C-U>','<C-Y>'},
   {'<leader>o','o<Esc>'},

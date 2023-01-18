@@ -5,6 +5,8 @@ return require('packer').startup(function(use)
   use 'tpope/vim-surround' -- 插件：用于包括号或者html標籤
 
   use 'tpope/vim-commentary' -- vim注释插件
+  
+  use 'tpope/vim-sensible' -- vim新手入門
 
   use 'mattn/emmet-vim' -- web開發插件也
 

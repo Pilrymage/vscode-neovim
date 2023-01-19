@@ -1,6 +1,16 @@
+-- package.path=package.path .. ';./lua/?.lua'
+-- if not vim.g.vscode then
+--   local packer = require('packer') -- 使用packer.nvim包
+--   packer.init({ compile_path = vim.fn.stdpath("config") .. "/lua/packer_compiled.lua"  })
+--   require("packer_compiled")
+--   -- packer.update()
+-- else
+require("plugins")
+-- end
 -- neovim 配置
 -- 按个人習慣逐渐改進的配置方案，可視情况注释不需要的部分
-require('plugins') // 使用packer.nvim包
+-- vscode環境啓動判斷
+
 local map = vim.api.nvim_set_keymap
 vim.g.mapleader=' '
 vim.opt.clipboard='unnamedplus'  --  需要xclip
@@ -37,6 +47,7 @@ end
 -- j：撤回，等同于u
 -- k：下一个搜索结果，等同于n
 -- l：插入，等同于i
+
 nvlist({
   {'u','k'},
   {'n','h'},
@@ -63,15 +74,18 @@ nvlist({
   {'<leader>o','o<Esc>'},
   {'<leader>O','O<Esc>'},
   })
+ 
 -- 帶shift的按键也有相應修改。
 -- 方向鍵做了一点强化，不需要逆天的$和0了。
 -- 方向鍵
 -- 快捷键映射
 -- 即使用caps lock頂替esc,對左手小拇指而言還是很惱火。
 -- colemak中排的字母使用頻率太高，退而求其次使用nk映射到esc.
+
 ilist({
   {'nk','<Esc>'}
 })
+
 
 -- 換成packer.nvim,這是一個使用lua安裝插件的管理器
 -- local Plug = vim.fn['plug#']

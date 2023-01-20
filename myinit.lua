@@ -1,15 +1,12 @@
-require("plugins")
--- end
 -- neovim 配置
 -- 按个人習慣逐渐改進的配置方案，可視情况注释不需要的部分
 -- vscode環境啓動判斷
+require("plugins")
 
 local map = vim.api.nvim_set_keymap
 local confPath = vim.fn.stdpath('config')
 vim.g.mapleader=' '
 vim.opt.clipboard='unnamedplus'  --  需要xclip
-vim.opt.listchars.tab='xx'
-vim.opt.listchars.trail='▫'
 local opts = {noremap = true, silent = true}
 local code=vim.g.vscode
 
@@ -32,7 +29,7 @@ setTable({
 'shiftwidth=2', -- 縮進2空格
 'softtabstop=2', -- “軟”tab爲2個空格
 'autoindent', -- 換行自動縮進
-'list', -- 顯示特殊字符
+-- 'list', -- 顯示特殊字符
 'scrolloff=4', -- 光標行保留上下空間：4行 
 'ttimeoutlen=0', --等待按鍵時間
 'notimeout', --  不許按鍵超時

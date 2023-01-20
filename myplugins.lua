@@ -36,13 +36,12 @@ useTable({
 
 -- 'tpope/vim-sensible', -- vim新手入門
 
-'mattn/emmet-vim', -- 利用css選擇器語法快速添加html標籤
-
 'asvetliakov/vim-easymotion', -- ?
 
 })
 
 useTablenc({
+'mattn/emmet-vim', -- 利用css選擇器語法快速添加html標籤
 
 'junegunn/fzf',  -- 模糊搜索fzf,替代ctrl+P
 

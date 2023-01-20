@@ -58,8 +58,8 @@ local nvmap= function(from,to,vto)
   if vto and code then
     map("n",from,"<Cmd>call VSCode"..vto.."<CR>",opts)
     map("v",from,vto,opts)
-  else
-    map("n",from,to,opts)
+  elseif to then
+    map("n",from,to,opts) 
     map("v",from,to,opts)
   end
 end
@@ -130,10 +130,10 @@ nvTable({
   -- {'K','N'}, -- 考慮放給vscode
   {'gh','ge'},
   {'`','~'},
-  {'tx',':r !figlet'},
+  {'tx',':r !figlet '},
   {',.','%'}, -- 找括號
   {'<leader>dw','/\\(\\<\\w\\+\\>\\)\\_s*\\1'},
   {'<leader>o','o<Esc>'}, -- 插入空行
   {'<leader>O','O<Esc>'},
-  {'<leader>u',''}
+  -- {'<leader>u',''}
   })

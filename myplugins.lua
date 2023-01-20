@@ -22,7 +22,7 @@ local useTablenc = function(table)
     usenc(str)
   end
 end
-
+                            
 packer.reset() -- 清空use列表
 
 -- vscode的插件以文字編輯類爲主，不用自帶gui的
@@ -34,13 +34,12 @@ useTable({
 
 'tpope/vim-commentary', -- vim注释插件,類似於vscode的ctrl+/
 
-'tpope/vim-sensible', -- vim新手入門
+-- 'tpope/vim-sensible', -- vim新手入門
 
 'mattn/emmet-vim', -- 利用css選擇器語法快速添加html標籤
 
-'vim-airline/vim-airline', -- 帥氣的状態欄,可惜不能用在vscode
+'asvetliakov/vim-easymotion', -- ?
 
-'ap/vim-css-color', -- css顏色直觀
 })
 
 useTablenc({
@@ -48,6 +47,18 @@ useTablenc({
 'junegunn/fzf',  -- 模糊搜索fzf,替代ctrl+P
 
 'junegunn/fzf.vim',-- 同作者在vim上的配置 
+
+'vim-airline/vim-airline', -- 帥氣的状態欄,可惜不能用在vscode
+
+'ap/vim-css-color', -- css顏色直觀
+
+'github/copilot.vim', -- AI寫代碼
+
+'nvim-treesitter/nvim-treesitter', -- 
+'nvim-treesitter/playground', -- 樹
+
+'theniceboy/nvim-deus', --nvim美化
+
 
 })
 packer.clean() -- vscode 會提示你清除不用的插件

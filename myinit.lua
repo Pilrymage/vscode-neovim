@@ -1,4 +1,5 @@
 -- neovim 配置
+
 -- 按个人習慣逐渐改進的配置方案，可視情况注释不需要的部分
 -- vscode環境啓動判斷
 require("plugins")

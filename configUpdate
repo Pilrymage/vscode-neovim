@@ -1,17 +1,17 @@
 #!/bin/bash
 if [ ! -d "$HOME/.config/nvim" ]
   then
-    echo "Directory ~/.config/nvim does not exists."
-    echo "Create ~/.config/nvim."
-    mkdir ~/.config/nvim
+    echo "Directory $HOME/.config/nvim does not exists."
+    echo "Create $HOME/.config/nvim."
+    mkdir $HOME/.config/nvim/
   fi
 
 if [ ! -d "$HOME/.config/nvim/lua" ]
   then
-    echo "Directory ~/.config/nvim/lua does not exists."
-    echo "Create ~/.config/nvim/lua."
-    mkdir ~/.config/nvim/lua
+    echo "Directory $HOME/.config/nvim/lua does not exists."
+    echo "Create $HOME/.config/nvim/lua."
+    mkdir $HOME/.config/nvim/lua
   fi
 
-cp init.lua ~/.config/nvim/init.lua
-cp plugins.lua ~/.config/nvim/lua/plugins.lua
+cp myinit.lua $HOME/.config/nvim/init.lua
+cp myplugins.lua $HOME/.config/nvim/lua/plugins.lua

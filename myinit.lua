@@ -1,16 +1,21 @@
 -- neovim 配置
-
 -- 按个人習慣逐渐改進的配置方案，可視情况注释不需要的部分
 -- vscode環境啓動判斷
 require("plugins")
 local confPath = vim.fn.stdpath('config')
+local code=vim.g.vscode
+if code then
 vim.cmd('source'..confPath..'/lua/config/vscode-windows.vim')
 vim.cmd('source'..confPath..'/lua/config/vscode-tab.vim')
+end
 local map = vim.api.nvim_set_keymap
 vim.g.mapleader=' '
+vim.g.EasyMotion_smartcase = 1
+vim.g.EaysMotion_use_upper=1
+vim.g.EasyMotion_smartcase=1
+vim.g.EasyMotion_keys='arsdhioplvkgjbkqwfluy;zxckmtne'
 vim.opt.clipboard='unnamedplus'  --  需要xclip
 local opts = {noremap = true, silent = true}
-local code=vim.g.vscode
 
 -- 簡單粗暴的追加編輯器行爲
 local setTable=function(myTable)
@@ -113,8 +118,7 @@ nvTable({
   {'gu','gk'},
   {'ge','gj'},
   {'\\v','v$h'},
-  {'h','e'}, -- 四行，功能替補
-  {'j','u'},
+  {'j','u'},-- 四行，功能替補
   {'k','n'},
   {'l','i'},
   {'N','0'}, -- 六行，句首/句尾相關操作
@@ -128,14 +132,29 @@ nvTable({
   {'W','5w'},
   {'B','5b'},
   {'L','I'},
-  {'H','E'},
   -- {'K','N'}, -- 考慮放給vscode
-  {'gh','ge'},
   {'`','~'},
   {'tx',':r !figlet '},
   {',.','%'}, -- 找括號
   {'<leader>dw','/\\(\\<\\w\\+\\>\\)\\_s*\\1'},
   {'<leader>z','o<Esc>'}, -- 插入空行
   {'<leader>Z','O<Esc>'},
+  {'z','<Plug>(easymotion-s)'},
+  {'<leader><leader>e','<Plug>(easymotion-j)'},
+  {'<leader><leader>u','<Plug>(easymotion-k)'},
+  {'<leader><leader>n','<Plug>(easymotion-linebackward)'},
+  {'<leader><leader>i','<Plug>(easymotion-lineforward)'},
+  {'w','<Plug>(easymotion-w)'},
+  {'W','<Plug>(easymotion-W)'},
+  {'b','<Plug>(easymotion-b)'},
+  {'B','<Plug>(easymotion-B)'},
+  {'h','<Plug>(easymotion-e)'}, 
+  {'H','<Plug>(easymotion-E)'},
+  {'gh','<Plug>(easymotion-ge)'},
+  {'gH','<Plug>(easymotion-gE)'},
+  {'f','<Plug>(easymotion-bd-fl)'},
+  {'t','<Plug>(easymotion-bd-tl)'},
+  {'<leader><leader>i','<Plug>(easymotion-lineforward)'},
+  {'<leader><leader>/','<Plug>(easymotion-sn)'},
   -- {'<leader>u',''}
   --[[  ]]})

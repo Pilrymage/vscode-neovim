@@ -12,7 +12,6 @@ if [ ! -d "$HOME/.config/nvim/lua" ]
     echo "Create $HOME/.config/nvim/lua."
     mkdir $HOME/.config/nvim/lua
   fi
-
 cp myinit.lua $HOME/.config/nvim/init.lua
 cp myplugins.lua $HOME/.config/nvim/lua/plugins.lua
 cp -r config $HOME/.config/nvim/lua/

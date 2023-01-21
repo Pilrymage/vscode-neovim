@@ -149,6 +149,6 @@ useTablenc({
 
 })
 packer.clean() -- vscode 會提示你清除不用的插件
-packer.install() -- neovim 裏下載回來
-require('hlslens').setup()
+-- packer.install() -- neovim 裏下載回來
+-- require('hlslens').setup()
 return plugins

@@ -3,9 +3,10 @@
 -- 按个人習慣逐渐改進的配置方案，可視情况注释不需要的部分
 -- vscode環境啓動判斷
 require("plugins")
-
-local map = vim.api.nvim_set_keymap
 local confPath = vim.fn.stdpath('config')
+vim.cmd('source'..confPath..'/lua/config/vscode-windows.vim')
+vim.cmd('source'..confPath..'/lua/config/vscode-tab.vim')
+local map = vim.api.nvim_set_keymap
 vim.g.mapleader=' '
 vim.opt.clipboard='unnamedplus'  --  需要xclip
 local opts = {noremap = true, silent = true}
@@ -96,6 +97,8 @@ nvTable({
   {';',':'}, -- 不要shift!
   {'Q',':q<CR>',
   'Notify("workbench.action.closeActiveEditor")'},   
+  {'!q',':q!<CR>',
+  'Notify("workbench.action.revertAndCloseActiveEditor")'},
   {'S',':w<CR>',
   'Notify("workbench.action.files.save")<CR>'}, 
   -- 不常用按鍵更替爲:w與:q,同時必須調用在vscode上自帶的命令爲第三個參數
@@ -122,8 +125,6 @@ nvTable({
   {'cI','c$'},
   {'U','5k'}, -- 強化移動
   {'E','5j'},
-  {'<C-u>','5<C-y>'},
-  {'<C-e>','5<C-e>'},
   {'W','5w'},
   {'B','5b'},
   {'L','I'},
@@ -134,7 +135,7 @@ nvTable({
   {'tx',':r !figlet '},
   {',.','%'}, -- 找括號
   {'<leader>dw','/\\(\\<\\w\\+\\>\\)\\_s*\\1'},
-  {'<leader>o','o<Esc>'}, -- 插入空行
-  {'<leader>O','O<Esc>'},
+  {'<leader>z','o<Esc>'}, -- 插入空行
+  {'<leader>Z','O<Esc>'},
   -- {'<leader>u',''}
-  })
+  --[[  ]]})

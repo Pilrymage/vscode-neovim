@@ -38,9 +38,12 @@ useTable({
 
 'asvetliakov/vim-easymotion', -- ?
 
+'unblevable/quick-scope' -- 爲f/t鍵查一行的重
+
 })
 
 useTablenc({
+'easymotion/vim-easymotion',
  'itchyny/vim-cursorword',
  'github/copilot.vim',
  'nvim-treesitter/nvim-treesitter',

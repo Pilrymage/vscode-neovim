@@ -7,6 +7,7 @@ local code=vim.g.vscode
 if code then
 vim.cmd('source'..confPath..'/lua/config/vscode-windows.vim')
 vim.cmd('source'..confPath..'/lua/config/vscode-tab.vim')
+vim.cmd('source'..confPath..'/lua/config/vscode-plugins.vim')
 end
 local map = vim.api.nvim_set_keymap
 vim.g.mapleader=' '

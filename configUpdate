@@ -5,7 +5,12 @@ if [ ! -d "$HOME/.config/nvim" ]
     echo "Create $HOME/.config/nvim."
     mkdir $HOME/.config/nvim/
   fi
-
+if [ ! -e "$HOME/.inputrc" ]
+  then
+    echo "File $HOME/.inputrc does not exists."
+    echo "Create $HOME/.inputrc."
+    cp .inputrc $HOME/.inputrc
+  fi
 if [ ! -d "$HOME/.config/nvim/lua" ]
   then
     echo "Directory $HOME/.config/nvim/lua does not exists."
@@ -15,4 +20,3 @@ if [ ! -d "$HOME/.config/nvim/lua" ]
 cp myinit.lua $HOME/.config/nvim/init.lua
 cp myplugins.lua $HOME/.config/nvim/lua/plugins.lua
 cp -r config $HOME/.config/nvim/lua/
-cp .inputrc $HOME/.inputrc

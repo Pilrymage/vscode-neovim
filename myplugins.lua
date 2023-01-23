@@ -24,6 +24,10 @@ local useTablenc = function(table)
 end
                             
 packer.reset() -- 清空use列表
+if not vim.g.code then
+ use 'easymotion/vim-easymotion',
+end
+
 
 -- vscode的插件以文字編輯類爲主，不用自帶gui的
 -- 插件重新下載麻煩，這裏的插件能留下就留下
@@ -34,8 +38,6 @@ useTable({
 
 'tpope/vim-commentary', -- vim注释插件,類似於vscode的ctrl+/
 
--- 'tpope/vim-sensible', -- vim新手入門
-
 'asvetliakov/vim-easymotion', -- ?
 
 'unblevable/quick-scope' -- 爲f/t鍵查一行的重
@@ -43,9 +45,7 @@ useTable({
 })
 
 useTablenc({
-'easymotion/vim-easymotion',
  'itchyny/vim-cursorword',
- 'github/copilot.vim',
  'nvim-treesitter/nvim-treesitter',
  'nvim-treesitter/playground',
  'theniceboy/nvim-deus',

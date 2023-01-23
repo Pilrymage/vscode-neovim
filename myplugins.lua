@@ -25,7 +25,7 @@ end
                             
 packer.reset() -- 清空use列表
 if not vim.g.code then
- use 'easymotion/vim-easymotion',
+ use 'easymotion/vim-easymotion'
 end
 
 
